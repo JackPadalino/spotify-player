@@ -54,9 +54,31 @@ const getAccessToken = () => {
     });
 };
 
+const getTrack = (query, accessToken) => {
+  const url = `https://api.spotify.com/v1/search?q=${query}&type=track`;
+  return fetch(url, {
+    method: "GET",
+    headers: { Authorization: `Bearer ${accessToken}` },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching token:", error);
+    });
+};
+
 // Event listener for the submit button
 document.getElementById("submitBtn").addEventListener("click", function () {
+  const query = document.getElementById("inputString").value;
   getAccessToken().then((response) => {
-    console.log(response);
+    getTrack(query, response.access_token);
   });
+  document.getElementById("inputString").value = "";
 });
