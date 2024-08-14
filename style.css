@@ -1,0 +1,8 @@
+li {
+  font-family: arial;
+  cursor: pointer;
+}
+li:hover {
+  font-size: 15px;
+  color: red;
+}
