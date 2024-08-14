@@ -1,8 +1,9 @@
+const clientId = "add your spotify client id here (as a string)";
+const clientSecret = "add your spotify client secret key here (as a string)";
+
 // requesting access tokens from spotify API
 const getAccessToken = () => {
   const url = "https://accounts.spotify.com/api/token";
-  const clientId = "add your spotify client id here (as a string)";
-  const clientSecret = "add your spotify client secret key here (as a string)";
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
