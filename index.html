@@ -3,27 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Spotify Test App</title>
   </head>
   <body>
     <!-- Input field for the user to enter a string -->
-    <input type="text" id="inputString" placeholder="Enter your string here" />
+    <input type="text" id="inputString" placeholder="Seach for tracks" />
 
     <!-- Button to trigger the fetch request -->
     <button id="submitBtn">Submit</button>
+    <!-- Placeholder to display search results -->
+    <ul id="trackList"></ul>
 
-    <iframe
-      title="Spotify Embed: Single Track"
-      width="100%"
-      height="100%"
-      style="min-height: 360px"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    ></iframe>
-
+    <!-- Placeholder for the iframe -->
+    <div id="iframeContainer"></div>
     <script src="script.js"></script>
-    <!-- Placeholder to display the result -->
-    <pre id="result"></pre>
   </body>
 </html>
